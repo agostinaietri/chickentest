@@ -12,7 +12,6 @@ import java.util.Optional;
 @RequestMapping("/api/farm")
 public class FarmController {
 
-
     @Autowired
     private FarmService farmService;
 
@@ -22,11 +21,11 @@ public class FarmController {
     }
 
     @GetMapping("/{farmId}")
-    public Farm getFarmById(@PathVariable("farmId") Long farmId) {
-        return farmService.getFarmById();
+    public Optional<Farm> getFarmById(@PathVariable("farmId") Long farmId) {
+        return farmService.getFarmById(farmId);
     }
 
-    @PutMapping("/{farmId}")
+    @PutMapping("/update/{farmId}")
     public Optional<Farm> updateFarm(@RequestBody Farm farm, @PathVariable("farmId") Long farmId) {
         return farmService.updateFarm(farm, farmId);
     }

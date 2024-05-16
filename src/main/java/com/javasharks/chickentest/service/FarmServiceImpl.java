@@ -5,7 +5,6 @@ import com.javasharks.chickentest.repository.FarmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -20,10 +19,6 @@ public class FarmServiceImpl implements FarmService {
     }
 
     @Override
-    public Farm getFarmById() {
-        return null;
-    }
-
     public Optional<Farm> getFarmById(Long farmId) {
         return farmRepository.findById(farmId);
     }
