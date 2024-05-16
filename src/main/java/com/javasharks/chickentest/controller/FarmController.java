@@ -30,7 +30,7 @@ public class FarmController {
         return farmService.updateFarm(farm, farmId);
     }
 
-    @DeleteMapping("/{farmId}")
+    @DeleteMapping("/delete/{farmId}")
     public String deleteFarmById(@PathVariable("farmId") Long farmId) {
         farmService.deleteFarmById(farmId);
         return "Farm " + farmId + " has been deleted";
