@@ -5,6 +5,9 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.ToString;
 
+import java.time.Instant;
+import java.util.Date;
+
 @Entity
 @Data
 @Table(name="egg")
@@ -16,5 +19,12 @@ public class Egg {
     private Long id;
     @NotBlank(message = "Price is mandatory")
     private double price;
-
+    /*
+    private int daysOld;
+    Egg() {
+        Date date = new Date();
+        date.getTime();
+        daysOld = date.getDay();
+    }
+    */
 }

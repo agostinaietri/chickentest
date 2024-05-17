@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.Generated;
 import lombok.ToString;
 
+import java.math.BigDecimal;
+
 @Entity
 @Data
 @Table(name="chicken")
@@ -16,6 +18,6 @@ public class Chicken {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank(message = "Price is mandatory")
-    private double price;
+    private BigDecimal price;
 
 }
